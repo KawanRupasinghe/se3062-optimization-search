@@ -28,7 +28,12 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
 ### run the default problem
 ```bash
-python runner.py
+python runner.py --student_id ITxxxxxxxx
+```
+
+### view on port
+```bash
+python -m http.server 8000      
 ```
 
 ### open the summary 
