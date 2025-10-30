@@ -1,28 +1,48 @@
 # ASE Testing Tool (Assignment)
 
-A small Python project containing search algorithms (A\*, BFS, IDS, Simulated Annealing, LP/DP, heuristics) and a runner.
+A small Python project for classic search and optimization tasks:
+BFS, A*, IDS, Simulated Annealing, Linear Programming (LP), Dynamic Programming (DP), and custom heuristics.
+A single runner generates problems, grades results, and writes JSON outputs for a browser summary.
+
+---
+
+## Features
+
+- **BFS / A\***: shortest-path on grid (with admissible heuristics)
+- **IDS**: iterative deepening with depth-limited search
+- **Simulated Annealing**: path smoothing under `length + 0.2 × turns`
+- **LP (corner-point)** and **DP (0/1 knapsack)** reference implementations
+- **Runner + HTML summary**: writes `problem.json` and `results.json`; `index.html` renders grids, plots, and scores
+
+---
 
 ## Quick start
 
-1. Ensure you have Python 3.9+ installed.
-2. (Optional) Create and activate a virtual environment.
-3. Run the main runner:
+**Requirements:** Python 3.9+
 
+```bash
+# (optional) create a virtual env
+python3 -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+```
+
+### run the default problem
 ```bash
 python runner.py
 ```
 
-## Project structure
+### open the summary 
+#### macOS
+```bash
+open index.html
+```
 
-- `runner.py` — entry-point to run experiments
-- `student_*.py` — student implementations
-- `heuristics.py`, `common.py` — shared utilities
-- `results/` — example outputs and metrics
+#### Windows
+```bash
+start index.html
+```
 
-## Requirements
-
-This repo has no strict external dependencies; standard library should be enough. If you add packages, list them in `requirements.txt`.
-
-## License
-
-Add a license if you plan to share publicly.
+#### Linux
+```bash
+xdg-open index.html
+```
